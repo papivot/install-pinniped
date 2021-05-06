@@ -1,0 +1,15 @@
+---
+apiVersion: idp.supervisor.pinniped.dev/v1alpha1
+kind: OIDCIdentityProvider
+metadata:
+  namespace: pinniped-supervisor
+  name: okta
+spec:
+  issuer: https://dev-5841773.okta.com/oauth2/default
+  claims:
+    username: email
+    groups: groups
+  authorizationConfig:
+    additionalScopes: ['email']
+  client:
+    secretName: okta-client-credentials

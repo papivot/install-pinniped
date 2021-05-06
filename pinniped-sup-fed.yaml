@@ -1,0 +1,9 @@
+apiVersion: config.supervisor.pinniped.dev/v1alpha1
+kind: FederationDomain
+metadata:
+  name: pinniped-provider
+  namespace: pinniped-supervisor
+spec:
+  issuer: https://pinniped.navlab.io
+  tls:
+    secretName: fed-tls-cert-secret
