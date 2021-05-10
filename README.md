@@ -1,8 +1,16 @@
 # Install Pinniped Supervisor and configure Concierge for authentication
 
-Supervisor cluster creation -> 
+### Setup 
 
-# Setup Supervisor Federation
+Clone this repo and modify the `config.param.template` file as per your enviornment. Save the file as `config.param`. For the Supervisor issuer, make sure the tls.key and tls.cert are present in the current folder. You may need to generate the certs if not using a public cert. 
+
+`$ source config.param`
+
+
+## Supervisor cluster creation -> 
+
+### Setup Supervisor Federation
+
 `$ kubectl apply -f https://get.pinniped.dev/latest/install-pinniped-supervisor.yaml`
 
 ```
@@ -12,24 +20,24 @@ $ kubectl create secret tls pinniped-supervisor-default-tls-certificate --cert=t
 
 `$ kubectl create -f 01-pinniped-sup-svc.yaml`
 
-`$ kubectl create -f 02-pinniped-sup-fed.yaml`
+`$ envsubst < 02-pinniped-sup-fed.yaml | kubectl create -f-`
 
-# Setup OIDC IDP
-`$ kubectl create -f 03-pinniped-sup-oidc-secret.yaml`
+### Setup OIDC IDP
+`$ envsubst < 03-pinniped-sup-oidc-secret.yaml | kubectl create -f-`
 
 ```
-$ kubectl create -f 04-pinniped-sup-oidc.yaml
+$ envsubst <  04-pinniped-sup-oidc.yaml | kubectl create -f-
 $ kubectl describe OIDCIdentityProvider -n pinniped-supervisor okta
 ```
 
-Conceirge setup 
+## Conceirge setup 
 
 #
-`audience="$(openssl rand -hex 8)"`
+`export audience="$(openssl rand -hex 8)"`
 
 `kubectl apply -f https://get.pinniped.dev/latest/install-pinniped-concierge.yaml`
 
-`kubectl apply -f pinniped-con.yaml`
+`envsubst < pinniped-con.yaml | kubectl apply -f- `
 
 Login
 
