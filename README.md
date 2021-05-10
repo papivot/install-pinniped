@@ -7,7 +7,7 @@ Clone this repo and modify the `config.param.template` file as per your enviornm
 `$ source config.param`
 
 
-## Supervisor cluster creation -> 
+## Supervisor setup
 
 ### Setup Supervisor Federation
 
