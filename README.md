@@ -30,7 +30,7 @@ $ envsubst <  04-pinniped-sup-oidc.yaml | kubectl create -f-
 $ kubectl describe OIDCIdentityProvider -n pinniped-supervisor okta
 ```
 
-## Conceirge setup 
+## Concierge setup 
 
 #
 `$ export audience="$(openssl rand -hex 8)"`
@@ -39,9 +39,8 @@ $ kubectl describe OIDCIdentityProvider -n pinniped-supervisor okta
 
 `$ envsubst < pinniped-con.yaml | kubectl apply -f- `
 
-Login
 
-#
+## Login using Pinniped client
 
 `$ pinniped get kubeconfig > /tmp/pinniped-kubeconfig`
 
