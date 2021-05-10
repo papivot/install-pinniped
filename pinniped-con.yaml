@@ -4,4 +4,4 @@ metadata:
   name: tkg-jwt-authenticator
 spec:
   issuer: ${OIDC_SUP_ISSUER}
-  audience: 15fae8c29df889c6 
+  audience: ${audience} 
