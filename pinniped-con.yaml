@@ -3,5 +3,5 @@ kind: JWTAuthenticator
 metadata:
   name: tkg-jwt-authenticator
 spec:
-  issuer: https://pinniped.navlab.io
+  issuer: ${OIDC_SUP_ISSUER}
   audience: 15fae8c29df889c6 

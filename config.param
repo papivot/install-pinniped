@@ -1,2 +1,5 @@
-  clientID: ""
-  clientSecret: ""
+export CLIENT_ID=""
+export CLIENT_SECRET=""
+export OIDC_PROVIDER="okta"
+export OIDC_ISSUER="https://dev-5841773.okta.com/oauth2/default"
+export OIDC_SUP_ISSUER="https://pinniped.navlab.io"

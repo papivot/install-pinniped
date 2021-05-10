@@ -4,6 +4,6 @@ metadata:
   name: pinniped-provider
   namespace: pinniped-supervisor
 spec:
-  issuer: https://pinniped.navlab.io
+  issuer: ${OIDC_SUP_ISSUER}
   tls:
     secretName: fed-tls-cert-secret
