@@ -33,20 +33,20 @@ $ kubectl describe OIDCIdentityProvider -n pinniped-supervisor okta
 ## Conceirge setup 
 
 #
-`export audience="$(openssl rand -hex 8)"`
+`$ export audience="$(openssl rand -hex 8)"`
 
-`kubectl apply -f https://get.pinniped.dev/latest/install-pinniped-concierge.yaml`
+`$ kubectl apply -f https://get.pinniped.dev/latest/install-pinniped-concierge.yaml`
 
-`envsubst < pinniped-con.yaml | kubectl apply -f- `
+`$ envsubst < pinniped-con.yaml | kubectl apply -f- `
 
 Login
 
 #
 
-`pinniped get kubeconfig > /tmp/pinniped-kubeconfig`
+`$ pinniped get kubeconfig > /tmp/pinniped-kubeconfig`
 
-`kubectl --kubeconfig /tmp/pinniped-kubeconfig1 get pods -A`
+`$ kubectl --kubeconfig /tmp/pinniped-kubeconfig get pods -A`
 
-`kubectl create clusterrolebinding nv-can-read --clusterrole view --user navneetv@vmware.com`
+`$ kubectl create clusterrolebinding nv-can-read --clusterrole view --user navneetv@vmware.com`
 
-`kubectl --kubeconfig /tmp/pinniped-kubeconfig1 get pods -A`
+`$ kubectl --kubeconfig /tmp/pinniped-kubeconfig get pods -A`
