@@ -1,5 +1,6 @@
-export CLIENT_ID="asdfgigsfkjdasgfidgsf"
-export CLIENT_SECRET="dafadsfgadsjkfhjkadsgfadskfkdsa"
 export OIDC_PROVIDER="okta"
 export OIDC_ISSUER="https://dev-xxxx.okta.com/oauth2/default"
+export CLIENT_ID="asdfgigsfkjdasgfidgsf"
+export CLIENT_SECRET="dafadsfgadsjkfhjkadsgfadskfkdsa"
+
 export OIDC_SUP_ISSUER="https://pinniped.navlab.io"
