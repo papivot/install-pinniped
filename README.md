@@ -14,7 +14,7 @@ Clone this repo and modify the `config.param.template` file as per your enviornm
 `$ kubectl apply -f https://get.pinniped.dev/latest/install-pinniped-supervisor.yaml`
 
 ```
-$ kubectl create secret tls fed-tls-cert-secret --cert=tls.cert --key=tls.key -n pinniped-supervisor`
+$ kubectl create secret tls fed-tls-cert-secret --cert=tls.cert --key=tls.key -n pinniped-supervisor
 $ kubectl create secret tls pinniped-supervisor-default-tls-certificate --cert=tls.cert --key=tls.key -n pinniped-supervisor
 ```
 
