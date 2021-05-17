@@ -40,6 +40,7 @@ Install the concierge  software on the management cluster
 `$ kubectl apply -f https://get.pinniped.dev/latest/install-pinniped-concierge.yaml`
 
 Create the JWTAuthenticator to get tokens from the Supervisor
+
 `$ envsubst < pinniped-con.yaml | kubectl apply -f- `
 
 
