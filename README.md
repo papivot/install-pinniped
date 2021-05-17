@@ -25,6 +25,8 @@ $ kubectl create secret tls pinniped-supervisor-default-tls-certificate --cert=t
 
 `$ envsubst < 02-pinniped-sup-fed.yaml | kubectl create -f-`
 
+Modify DNS of the LoadBalancer to point to the  OIDC_SUP_ISSUER value. 
+
 ### Setup OIDC IDP
 Create the OIDC IDP authentication secret.
 
